@@ -15,26 +15,26 @@ class NetworkManager {
     let baseURL = "https://itunes.apple.com/search?term="
     let musicParameter = "&media=music"
     
-    func getTracksByArtist(_ artist:String, closure: @escaping (Result<[Track],ITError>)->()){
+    func getTracksByArtist(_ artist:String, completion: @escaping (Result<[Track],ITError>)->()){
         let endpoint = baseURL + artist + musicParameter
         guard let url = URL(string: endpoint) else {
-            closure(.failure(.invalidName))
+            completion(.failure(.invalidName))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let _ = error {
-                closure(.failure(.unableToComplete))
+                completion(.failure(.unableToComplete))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                closure(.failure(.invalidResponse))
+                completion(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else{
-                closure(.failure(.invalidData))
+                completion(.failure(.invalidData))
                 return
             }
             
@@ -43,12 +43,12 @@ class NetworkManager {
             do{
                 let itunesResponse = try decoder.decode(ItunesResponse.self, from: data)
                 if itunesResponse.resultCount == 0{
-                    closure(.failure(.artistNotFound))
+                    completion(.failure(.artistNotFound))
                 }else{
-                    closure(.success(itunesResponse.results))
+                    completion(.success(itunesResponse.results))
                 }
             }catch{
-                closure(.failure(.unableToComplete))
+                completion(.failure(.unableToComplete))
             }
             
         }
