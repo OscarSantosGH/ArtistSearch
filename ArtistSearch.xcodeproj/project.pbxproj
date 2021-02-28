@@ -23,6 +23,7 @@
 		8338C7DB25E7560E006BB55B /* TrackDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338C7DA25E7560E006BB55B /* TrackDateFormatter.swift */; };
 		8338C7E325E76817006BB55B /* ITError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338C7E225E76817006BB55B /* ITError.swift */; };
 		8338C7EB25E76C92006BB55B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338C7EA25E76C92006BB55B /* LoadingView.swift */; };
+		8338C7F425EAFFE2006BB55B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338C7F325EAFFE2006BB55B /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8338C7DA25E7560E006BB55B /* TrackDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDateFormatter.swift; sourceTree = "<group>"; };
 		8338C7E225E76817006BB55B /* ITError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITError.swift; sourceTree = "<group>"; };
 		8338C7EA25E76C92006BB55B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8338C7F325EAFFE2006BB55B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		8338C77825E73430006BB55B /* ArtistSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8338C7F225EAFFC4006BB55B /* ViewModels */,
 				8338C7E125E767D0006BB55B /* Utilities */,
 				8338C7E025E767B4006BB55B /* Managers */,
 				8338C7D125E74530006BB55B /* Models */,
@@ -190,6 +193,14 @@
 				8338C7E225E76817006BB55B /* ITError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8338C7F225EAFFC4006BB55B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8338C7F325EAFFE2006BB55B /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				8338C7EB25E76C92006BB55B /* LoadingView.swift in Sources */,
 				8338C77C25E73430006BB55B /* SceneDelegate.swift in Sources */,
 				8338C7DB25E7560E006BB55B /* TrackDateFormatter.swift in Sources */,
+				8338C7F425EAFFE2006BB55B /* SearchViewModel.swift in Sources */,
 				8338C7D625E7460B006BB55B /* NetworkManager.swift in Sources */,
 				8338C7CB25E7442A006BB55B /* ItunesResponse.swift in Sources */,
 				8338C7E325E76817006BB55B /* ITError.swift in Sources */,
